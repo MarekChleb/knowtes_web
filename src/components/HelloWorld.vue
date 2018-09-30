@@ -18,9 +18,13 @@ export default {
   }),
 
   mounted () {
-    this.$axios.get('http://localhost:8000/', {})
+    this.$axios
+      .get('http://localhost:8000/', {})
       .then(response => {
         console.log('asdasd', response)
+      })
+      .catch(error => {
+        console.log('error', error)
       })
   }
 };
