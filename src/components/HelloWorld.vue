@@ -18,8 +18,10 @@ export default {
   }),
 
   mounted () {
+    let id = this.$route.params.id
+    id = id ? id : ''
     this.$axios
-      .get('http://localhost:8000/', {})
+      .get(`http://localhost:8000/${id}`, {})
       .then(response => {
         console.log('asdasd', response)
       })
